@@ -1,0 +1,43 @@
+{
+  "name": "SimpleCount",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minoru-cw/SimpleCount.git"
+  },
+  "version": "1.0.0",
+  "description": "Countup app that is used flux architecture.",
+  "main": "App.js",
+  "scripts": {
+    "build": "browserify src/App.js -t [babelify --no-sourceMaps]  -o dist/bundle.js",
+    "watch": "watchify src/App.js -t [babelify --no-sourceMaps]  -o dist/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "minoru-cw",
+  "email": "cloudy.windlwss+git@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
+    "react": "^0.14.3",
+    "watchify": "^3.6.1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "babel": {
+    "plugins": [
+      "transform-react-jsx"
+    ]
+  }
+}
